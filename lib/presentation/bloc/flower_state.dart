@@ -12,12 +12,12 @@ class FlowerInitial extends FlowerState {}
 class Loading extends FlowerState {}
 
 class Loaded extends FlowerState {
-  const Loaded({required this.flowerList});
+  const Loaded({required this.flowerCategorizedList});
 
-  final List<Flowers> flowerList;
+  final List flowerCategorizedList;
 
   @override
-  List<Object> get props => [flowerList];
+  List<Object> get props => [flowerCategorizedList];
 }
 
 class Error extends FlowerState {

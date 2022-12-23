@@ -2,6 +2,7 @@ import 'package:get_it/get_it.dart';
 import 'package:sample_app_zebra_technology/data/datasource/flower_local_datasourse.dart';
 import 'package:sample_app_zebra_technology/data/repositories/flower_repository_impl.dart';
 import 'package:sample_app_zebra_technology/domain/repository/flower_repository.dart';
+import 'package:sample_app_zebra_technology/domain/usecases/get_categoried_list.dart';
 import 'package:sample_app_zebra_technology/domain/usecases/get_flower_list_usecase.dart';
 import 'package:sample_app_zebra_technology/presentation/bloc/flower_bloc.dart';
 
@@ -11,11 +12,13 @@ Future<void>? init() async {
   //! Feature - Number Trivia
   //* Bloc
   sl.registerFactory(
-    () => FlowerBloc(sl()),
+    () => FlowerBloc(sl(), sl()),
   );
 
   //* usecase
   sl.registerLazySingleton(() => GetFlowerList(sl()));
+  sl.registerLazySingleton<GetCategorizedFlowerList>(
+      () => GetCategorizedFlowerListImpl());
 
   //* repository
   sl.registerLazySingleton<FlowerRepository>(
