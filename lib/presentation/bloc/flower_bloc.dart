@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:sample_app_zebra_technology/domain/usecases/get_categoried_list.dart';
+import 'package:sample_app_zebra_technology/domain/usecases/get_categorized_list_usecase.dart';
 import 'package:sample_app_zebra_technology/domain/usecases/get_flower_list_usecase.dart';
 
 part 'flower_event.dart';
